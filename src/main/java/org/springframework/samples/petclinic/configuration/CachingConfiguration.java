@@ -54,4 +54,5 @@ public class CachingConfiguration implements CachingConfigurer {
     public KeyGenerator keyGenerator() {
         return new SimpleKeyGenerator();
     }
+
 }
