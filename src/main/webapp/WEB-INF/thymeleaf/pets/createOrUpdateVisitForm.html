@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head th:replace="fragments/headTag :: headTag"></head>
+
+<body>
+<script>
+    $(function () {
+        $("#date").datepicker({ dateFormat: 'yy/mm/dd'});
+    });
+</script>
+<div class="container">
+    <div th:include="fragments/bodyHeader" th:remove="tag"></div>
+
+    <h2><span th:if="${visit['new']}" th:remove="tag">New </span>Visit</h2>
+
+    <b>Pet</b>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Birth Date</th>
+            <th>Type</th>
+            <th>Owner</th>
+        </tr>
+        </thead>
+        <tr>
+            <td th:text="${visit.pet.name}">[name]</td>
+            <td th:text="${{visit.pet.birthDate}}">[birthdate]</td>
+            <td th:text="${visit.pet.type.name}">[type]</td>
+            <td th:text="|${visit.pet.owner.firstName} ${visit.pet.owner.lastName}|">[firstName lastName]</td>
+        </tr>
+    </table>
+
+    <form th:object="${visit}" action="../owners/ownerDetails.html" th:action="@{${#httpServletRequest.servletPath}}" method="post">
+        <div class="control-group">
+            <label class="control-label">Date </label>
+
+            <div class="controls">
+                <input type="text" th:field="*{date}" id="date"/>
+                <span class="help-inline" th:errors="*{date}">[date error]</span>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Description </label>
+
+            <div class="controls">
+                <input type="text" th:field="*{description}"/>
+                <span class="help-inline" th:errors="*{description}">[description error]</span>
+            </div>
+        </div>
+        <div class="form-actions">
+            <input type="hidden" name="petId" th:value="${visit.pet.id}"/>
+            <button type="submit">Add Visit</button>
+        </div>
+    </form>
+
+    <br/>
+    <b>Previous Visits</b>
+    <table style="width: 333px;">
+        <tr>
+            <th>Date</th>
+            <th>Description</th>
+        </tr>
+        <tr th:if="${!visit['new']}" th:each="visit : ${visit.pet.visits}">
+            <td th:text="${#dates.format(visit.date.toDate(),'yyyy/MM/dd')}">[date]</td>
+            <td th:text="${visit.description}">[description]</td>
+        </tr>
+    </table>
+
+</div>
+
+    <table th:replace="fragments/footer :: footer" class="footer"></table>
+
+</body>
+
+</html>

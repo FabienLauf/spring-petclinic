@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head th:replace="fragments/headTag :: headTag"></head>
+
+<body>
+<div class="container">
+
+    <div th:include="fragments/bodyHeader" th:remove="tag"></div>
+
+    <h2 th:text="#{welcome}">Welcome!</h2>
+
+    <img src="../../resources/images/pets.png" th:src="@{/resources/images/pets.png}" />
+
+    <table th:replace="fragments/footer :: footer" class="footer"></table>
+
+</div>
+</body>
+
+</html>

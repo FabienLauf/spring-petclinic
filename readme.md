@@ -50,6 +50,13 @@ Right click on PetClinicApplication.java -> Run as -> Java application
     <td>
       <a href="/src/main/java/org/springframework/samples/petclinic/application/PetClinicApplication.java">PetClinicApplication.java</a>
     </td>
+  </tr>
+  <tr>
+    <td>Dandelion Datatables</td>
+    <td>
+      <a href="/src/main/java/org/springframework/samples/petclinic/configuration/DandelionConfiguration.java">DandelionConfiguration.java</a>
+    </td>
+  </tr>
   <tr>
     <td>Spring MVC- Atom and XML integration</td>
     <td>

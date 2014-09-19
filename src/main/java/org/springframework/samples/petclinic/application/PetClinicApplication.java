@@ -19,12 +19,12 @@ import org.springframework.context.annotation.Configuration;
 	"org.springframework.samples.petclinic.web"
 })
 public class PetClinicApplication extends SpringBootServletInitializer {
-	
+
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(PetClinicApplication.class); 
+		return application.sources(PetClinicApplication.class);
 	}
-	
+
 	public static void main(String[] args) throws Exception {
 		ApplicationContext ctx = SpringApplication.run(PetClinicApplication.class, args);
 		

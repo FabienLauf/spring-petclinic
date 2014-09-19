@@ -35,16 +35,35 @@
 		
 		<!-- RSS -->
 		<rome.version>1.0</rome.version>
+		
+		<dandelion.version>0.10.1</dandelion.version>
 	</properties>
 	
 	<dependencies>
 	
-		<!-- MVC -->
+		<!-- Web -->
+		<dependency>
+        	<groupId>org.springframework.boot</groupId>
+        	<artifactId>spring-boot-starter-web</artifactId>
+    	</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+			<scope>provided</scope>
 		</dependency>
 		
+		<!-- Dandelion-DataTables -->
+		<dependency>
+			<groupId>com.github.dandelion</groupId>
+			<artifactId>datatables-thymeleaf</artifactId>
+			<version>${dandelion.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.dandelion</groupId>
+			<artifactId>datatables-export-itext</artifactId>
+			<version>${dandelion.version}</version>
+		</dependency>
+      
 		<!-- Monitoring services -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -79,22 +98,6 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context-support</artifactId>
-		</dependency>
-		
-		<!-- Tomcat -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-tomcat</artifactId>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.tomcat.embed</groupId>
-			<artifactId>tomcat-embed-jasper</artifactId>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jstl</artifactId>
 		</dependency>
 		
 		<!-- used for Atom -->
