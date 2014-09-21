@@ -15,7 +15,7 @@
 	<name>petclinic</name>
 
 	<properties>
-		<!-- Spring Boot Main class -->
+		<!-- Spring Boot Main class. Mandatory for deploying into external containers -->
 		<start-class>org.springframework.samples.petclinic.application.PetClinicApplication</start-class>
 		
 		<!-- Generic properties -->
