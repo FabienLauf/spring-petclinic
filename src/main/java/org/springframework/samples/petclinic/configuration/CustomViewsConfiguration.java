@@ -8,6 +8,13 @@ import org.springframework.samples.petclinic.web.VetsAtomView;
 import org.springframework.web.servlet.view.BeanNameViewResolver;
 import org.springframework.web.servlet.view.xml.MarshallingView;
 
+/**
+ * Spring Boot automatically adds the following ViewBeans below into a BeanNameViewResolver already
+ * present in the context thanks to the WebAutoConfiguration.
+ * 
+ * @author Fabien Lauf
+ *
+ */
 @Configuration
 public class CustomViewsConfiguration {
 

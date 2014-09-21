@@ -5,6 +5,12 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
+/**
+ * Profil specific configuration for the use of Spring Data JPA implementation
+ * 
+ * @author Fabien Lauf
+ *
+ */
 @Profile("spring-data-jpa")
 @Configuration
 @EnableJpaRepositories("org.springframework.samples.petclinic.repository.springdatajpa")

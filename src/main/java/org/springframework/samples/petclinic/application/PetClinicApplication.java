@@ -10,6 +10,14 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * The Main Application class.<br>
+ * {@link org.springframework.boot.context.web.SpringBootServletInitializer
+ * SpringBootServletInitializer} is needed when packaging as a WAR.
+ * 
+ * @author Fabien Lauf
+ *
+ */
 @Configuration
 @EnableAutoConfiguration
 @ComponentScan
